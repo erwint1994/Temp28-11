@@ -5,13 +5,17 @@ using pasTemp;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using Vertalen;
 
 namespace WindowsFormsApp1
 {
     public partial class SettingsSensor2 : Form
     {
         string MyConnectionString2 = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+        public Temperatuur Parentform1 = null;
         public Temperatuur Parentform2 = null;
+        public Temperatuur Parentform3 = null;
+        public Temperatuur Parentform4 = null;
         public SettingsSensor2()
         {
             InitializeComponent();
@@ -210,5 +214,29 @@ namespace WindowsFormsApp1
                 throw;
             }
         }
+
+        private void SettingsSensor2_Load(object sender, EventArgs e)
+        {
+            if (Engels == true)
+            {
+                Vertaal.VertaalControlsEN(this, "EN");
+            }
+
+            if (Duits == true)
+            {
+                Vertaal.VertaalControlsDE(this, "DE");
+            }
+
+            if (Nederlands == true)
+            {
+                Vertaal.VertaalControlsNL(this, "NL");
+            }
+        }
+
+        public bool Engels => Parentform1.Engels;
+
+        public bool Duits => Parentform3.Duits;
+
+        public bool Nederlands => Parentform3.Nederlands;
     }
 }

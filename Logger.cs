@@ -10,13 +10,15 @@ namespace pasLogger
     {
         // Private
         private static LogEvent FLogEvent;
+
         // Public
-        public static LogEvent LogEvent { get { return FLogEvent; } set { FLogEvent = value; } }
+
+        public static LogEvent logEvent { get { return FLogEvent; } set { FLogEvent = value; } }
+
         public static void Log(LogType ALogtype, string Message)
         {
             FLogEvent?.Invoke(ALogtype, Message);
         }
+
     }
-
-
 }

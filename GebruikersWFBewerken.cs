@@ -9,14 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using log4net;
+using Vertalen;
+
 namespace WindowsFormsApp1
 {
     public partial class GebruikersWFBewerken : Form
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
-            (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         int id = Rights.id;
+        public Temperatuur Parentform1 = null;
         string MyConnectionString2 = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
         public GebruikersWFBewerken()
         {
@@ -37,20 +37,32 @@ namespace WindowsFormsApp1
                 cmd.Parameters.AddWithValue("@tussenvoegsel", TxbTussenvoegsel.Text);
                 cmd.Parameters.AddWithValue("@id", TxbId.Text);
                 cmd.ExecuteNonQuery();
-                log.Info("UPDATE user");
             }
             catch (Exception E)
             {
                 MessageBox.Show(E.Message);
-                log.Error("Can't UPDATE user", E);
+                throw;
             }
             connection.Close();
             this.Close();
-            log.Info("Close GebruikersWFBewerken.cs");
         }
         private void GebruikersWFBewerken_Load(object sender, EventArgs e)
         {
-            log.Info("GebruikerWFBewerken load START");
+            if (Parentform1.Engels == true)
+            {
+                Vertaal.VertaalControlsEN(this, "EN");
+            }
+
+            if (Parentform1.Duits == true)
+            {
+                Vertaal.VertaalControlsDE(this, "DE");
+            }
+
+            if (Parentform1.Nederlands == true)
+            {
+                Vertaal.VertaalControlsNL(this, "NL");
+            }
+
             using (SqlConnection connection2 = new SqlConnection(MyConnectionString2))
             {
                 SqlCommand command;
@@ -75,23 +87,19 @@ namespace WindowsFormsApp1
                         TxbAchternaam.Text = Achternaam;
                         TxbTussenvoegsel.Text = Tussenvoegsel;
                         TxbId.Text = Convert.ToString(id);
-                        log.Info("SELECT * FROM tbl_EmailAdresWFapp");
                     }
                 }
-                catch (Exception E)
+                catch (Exception /*E*/)
                 {
                     MessageBox.Show("Error gebruiker(s) opvragen.");
-                    log.Error("SELECT * FROM tbl_EmailAdresWFapp", E);
+                    //MessageBox.Show(E.Message);
                 }
-                log.Info("GebruikerWFBewerken load STOP");
             }
         }
+
         private void GebruikersWFBewerken_FormClosed(object sender, FormClosedEventArgs e)
         {
-            log.Info("GebruikerWFBewerken.cs closed");
-            Gebruiker form2 = new Gebruiker();
-            form2.Show();
-            log.Info("Opens Gebruiker.cs");
+
         }
     }
 }

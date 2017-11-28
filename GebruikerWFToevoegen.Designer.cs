@@ -80,38 +80,38 @@
             // LblEmail
             // 
             this.LblEmail.AutoSize = true;
-            this.LblEmail.Location = new System.Drawing.Point(47, 107);
+            this.LblEmail.Location = new System.Drawing.Point(3, 107);
             this.LblEmail.Name = "LblEmail";
-            this.LblEmail.Size = new System.Drawing.Size(42, 13);
+            this.LblEmail.Size = new System.Drawing.Size(32, 13);
             this.LblEmail.TabIndex = 36;
-            this.LblEmail.Text = "Email* :";
+            this.LblEmail.Text = "Email";
             // 
             // LblTussenvoegsel
             // 
             this.LblTussenvoegsel.AutoSize = true;
             this.LblTussenvoegsel.Location = new System.Drawing.Point(3, 47);
             this.LblTussenvoegsel.Name = "LblTussenvoegsel";
-            this.LblTussenvoegsel.Size = new System.Drawing.Size(85, 13);
+            this.LblTussenvoegsel.Size = new System.Drawing.Size(79, 13);
             this.LblTussenvoegsel.TabIndex = 35;
-            this.LblTussenvoegsel.Text = "Tussenvoegsel :";
+            this.LblTussenvoegsel.Text = "Tussenvoegsel";
             // 
             // LblAchternaam
             // 
             this.LblAchternaam.AutoSize = true;
-            this.LblAchternaam.Location = new System.Drawing.Point(18, 78);
+            this.LblAchternaam.Location = new System.Drawing.Point(3, 75);
             this.LblAchternaam.Name = "LblAchternaam";
-            this.LblAchternaam.Size = new System.Drawing.Size(74, 13);
+            this.LblAchternaam.Size = new System.Drawing.Size(64, 13);
             this.LblAchternaam.TabIndex = 34;
-            this.LblAchternaam.Text = "Achternaam* :";
+            this.LblAchternaam.Text = "Achternaam";
             // 
             // LblVoornaam
             // 
             this.LblVoornaam.AutoSize = true;
-            this.LblVoornaam.Location = new System.Drawing.Point(27, 18);
+            this.LblVoornaam.Location = new System.Drawing.Point(3, 15);
             this.LblVoornaam.Name = "LblVoornaam";
-            this.LblVoornaam.Size = new System.Drawing.Size(65, 13);
+            this.LblVoornaam.Size = new System.Drawing.Size(55, 13);
             this.LblVoornaam.TabIndex = 33;
-            this.LblVoornaam.Text = "Voornaam* :";
+            this.LblVoornaam.Text = "Voornaam";
             // 
             // GebruikerWFToevoegen
             // 
@@ -130,6 +130,7 @@
             this.Name = "GebruikerWFToevoegen";
             this.Text = "GebruikerWFToevoegen";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GebruikerWFToevoegen_FormClosed);
+            this.Load += new System.EventHandler(this.GebruikerWFToevoegen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

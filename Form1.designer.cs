@@ -29,47 +29,46 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title18 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title17 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title16 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Temperatuur));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.messageQueue1 = new System.Messaging.MessageQueue();
             this.BtnOpvragenVanTot = new System.Windows.Forms.Button();
             this.DtpTot = new System.Windows.Forms.DateTimePicker();
             this.LblTot = new System.Windows.Forms.Label();
             this.LblVan = new System.Windows.Forms.Label();
             this.DtpVan = new System.Windows.Forms.DateTimePicker();
-            this.BtnLocatieSensorOpslaan = new System.Windows.Forms.Button();
             this.BtnLogout = new System.Windows.Forms.Button();
             this.Instellingen = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.test2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,12 +101,12 @@
             this.minutenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.minutenToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.uitschakelenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnInstellingen = new System.Windows.Forms.Button();
+            this.BtnInstellingen = new System.Windows.Forms.Button();
             this.GrafiekTemperatuur = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tblTemperatureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.BtnTimerStart1 = new System.Windows.Forms.Button();
-            this.BtnTimerStop1 = new System.Windows.Forms.Button();
+            this.BtnTimerStart = new System.Windows.Forms.Button();
+            this.BtnTimerStop = new System.Windows.Forms.Button();
             this.LblRealTime1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -116,7 +115,6 @@
             this.GrafiekTemperatuur2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grafiekFarhenheid2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.GrafiekKelvin2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.BtnRefreshLocation = new System.Windows.Forms.Button();
             this.PnlSensor2 = new System.Windows.Forms.Panel();
             this.PnlS2Top = new System.Windows.Forms.Panel();
             this.PnlActiveS2 = new System.Windows.Forms.Panel();
@@ -136,9 +134,9 @@
             this.PnlFooter = new System.Windows.Forms.Panel();
             this.TxbPcUser = new System.Windows.Forms.TextBox();
             this.TxbLastConnTime = new System.Windows.Forms.TextBox();
-            this.LblUserApp = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TxbUserLoggedIn = new System.Windows.Forms.TextBox();
+            this.LblUserApp = new System.Windows.Forms.Label();
             this.LblPc = new System.Windows.Forms.Label();
             this.BtnStatusSqlConnection = new System.Windows.Forms.Button();
             this.LblStatusSql = new System.Windows.Forms.Label();
@@ -204,7 +202,7 @@
             // 
             // BtnOpvragenVanTot
             // 
-            this.BtnOpvragenVanTot.Location = new System.Drawing.Point(569, 3);
+            this.BtnOpvragenVanTot.Location = new System.Drawing.Point(505, 4);
             this.BtnOpvragenVanTot.Name = "BtnOpvragenVanTot";
             this.BtnOpvragenVanTot.Size = new System.Drawing.Size(75, 23);
             this.BtnOpvragenVanTot.TabIndex = 93;
@@ -214,7 +212,7 @@
             // 
             // DtpTot
             // 
-            this.DtpTot.Location = new System.Drawing.Point(353, 5);
+            this.DtpTot.Location = new System.Drawing.Point(305, 5);
             this.DtpTot.MaxDate = new System.DateTime(2050, 1, 1, 0, 0, 0, 0);
             this.DtpTot.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.DtpTot.Name = "DtpTot";
@@ -226,7 +224,7 @@
             // 
             this.LblTot.AutoSize = true;
             this.LblTot.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTot.Location = new System.Drawing.Point(301, 7);
+            this.LblTot.Location = new System.Drawing.Point(249, 9);
             this.LblTot.Name = "LblTot";
             this.LblTot.Size = new System.Drawing.Size(26, 13);
             this.LblTot.TabIndex = 91;
@@ -244,7 +242,7 @@
             // 
             // DtpVan
             // 
-            this.DtpVan.Location = new System.Drawing.Point(80, 5);
+            this.DtpVan.Location = new System.Drawing.Point(43, 5);
             this.DtpVan.MaxDate = new System.DateTime(2050, 1, 1, 0, 0, 0, 0);
             this.DtpVan.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.DtpVan.Name = "DtpVan";
@@ -252,13 +250,6 @@
             this.DtpVan.TabIndex = 89;
             this.DtpVan.Value = new System.DateTime(2017, 11, 9, 0, 0, 0, 0);
             this.DtpVan.ValueChanged += new System.EventHandler(this.DtpVan_ValueChanged);
-            // 
-            // BtnLocatieSensorOpslaan
-            // 
-            this.BtnLocatieSensorOpslaan.Location = new System.Drawing.Point(0, 0);
-            this.BtnLocatieSensorOpslaan.Name = "BtnLocatieSensorOpslaan";
-            this.BtnLocatieSensorOpslaan.Size = new System.Drawing.Size(75, 23);
-            this.BtnLocatieSensorOpslaan.TabIndex = 158;
             // 
             // BtnLogout
             // 
@@ -435,7 +426,7 @@
             this.meldingenUitschakelenToolStripMenuItem.Name = "meldingenUitschakelenToolStripMenuItem";
             this.meldingenUitschakelenToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.meldingenUitschakelenToolStripMenuItem.Text = "Ontvangers beheren";
-            this.meldingenUitschakelenToolStripMenuItem.Click += new System.EventHandler(this.GebruikersBeherenToolStripMenuItem_Click);
+            this.meldingenUitschakelenToolStripMenuItem.Click += new System.EventHandler(this.MeldingenUitschakelenToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -464,21 +455,21 @@
             // fullScreenToolStripMenuItem2
             // 
             this.fullScreenToolStripMenuItem2.Name = "fullScreenToolStripMenuItem2";
-            this.fullScreenToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.fullScreenToolStripMenuItem2.Size = new System.Drawing.Size(130, 22);
             this.fullScreenToolStripMenuItem2.Text = "Full screen";
             this.fullScreenToolStripMenuItem2.Click += new System.EventHandler(this.FullScreenToolStripMenuItem2_Click);
             // 
             // maximaalToolStripMenuItem1
             // 
             this.maximaalToolStripMenuItem1.Name = "maximaalToolStripMenuItem1";
-            this.maximaalToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.maximaalToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.maximaalToolStripMenuItem1.Text = "Maximaal";
             this.maximaalToolStripMenuItem1.Click += new System.EventHandler(this.MaximaalToolStripMenuItem1_Click);
             // 
             // minimaalToolStripMenuItem1
             // 
             this.minimaalToolStripMenuItem1.Name = "minimaalToolStripMenuItem1";
-            this.minimaalToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.minimaalToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.minimaalToolStripMenuItem1.Text = "Minimaal";
             this.minimaalToolStripMenuItem1.Click += new System.EventHandler(this.MinimaalToolStripMenuItem1_Click);
             // 
@@ -521,18 +512,18 @@
             this.uitschakelenToolStripMenuItem.Text = "Uitschakelen";
             this.uitschakelenToolStripMenuItem.Click += new System.EventHandler(this.UitschakelenToolStripMenuItem_Click);
             // 
-            // btnInstellingen
+            // BtnInstellingen
             // 
-            this.btnInstellingen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInstellingen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnInstellingen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInstellingen.BackgroundImage")));
-            this.btnInstellingen.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnInstellingen.Location = new System.Drawing.Point(888, -1);
-            this.btnInstellingen.Name = "btnInstellingen";
-            this.btnInstellingen.Size = new System.Drawing.Size(51, 50);
-            this.btnInstellingen.TabIndex = 131;
-            this.btnInstellingen.UseVisualStyleBackColor = false;
-            this.btnInstellingen.Click += new System.EventHandler(this.BtnInstellingen_Click);
+            this.BtnInstellingen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnInstellingen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BtnInstellingen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnInstellingen.BackgroundImage")));
+            this.BtnInstellingen.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.BtnInstellingen.Location = new System.Drawing.Point(889, 3);
+            this.BtnInstellingen.Name = "BtnInstellingen";
+            this.BtnInstellingen.Size = new System.Drawing.Size(51, 50);
+            this.BtnInstellingen.TabIndex = 131;
+            this.BtnInstellingen.UseVisualStyleBackColor = false;
+            this.BtnInstellingen.Click += new System.EventHandler(this.BtnInstellingen_Click);
             // 
             // GrafiekTemperatuur
             // 
@@ -540,26 +531,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrafiekTemperatuur.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea9.Name = "ChartArea1";
-            this.GrafiekTemperatuur.ChartAreas.Add(chartArea9);
+            chartArea18.Name = "ChartArea1";
+            this.GrafiekTemperatuur.ChartAreas.Add(chartArea18);
             this.GrafiekTemperatuur.DataSource = this.tblTemperatureBindingSource;
-            legend9.Name = "Legend1";
-            this.GrafiekTemperatuur.Legends.Add(legend9);
+            legend18.Name = "Legend1";
+            this.GrafiekTemperatuur.Legends.Add(legend18);
             this.GrafiekTemperatuur.Location = new System.Drawing.Point(0, 338);
             this.GrafiekTemperatuur.Name = "GrafiekTemperatuur";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Sensor 1: Celsius";
-            series6.XValueMember = "DateTime";
-            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series6.YValueMembers = "TemperatureCelsius";
-            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.GrafiekTemperatuur.Series.Add(series6);
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series12.Legend = "Legend1";
+            series12.Name = "Sensor 1: Celsius";
+            series12.XValueMember = "DateTime";
+            series12.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series12.YValueMembers = "TemperatureCelsius";
+            series12.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.GrafiekTemperatuur.Series.Add(series12);
             this.GrafiekTemperatuur.Size = new System.Drawing.Size(993, 463);
             this.GrafiekTemperatuur.TabIndex = 135;
-            title9.Name = "Title1";
-            this.GrafiekTemperatuur.Titles.Add(title9);
+            title18.Name = "Title1";
+            this.GrafiekTemperatuur.Titles.Add(title18);
             // 
             // tblTemperatureBindingSource
             // 
@@ -569,31 +560,31 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // BtnTimerStart1
+            // BtnTimerStart
             // 
-            this.BtnTimerStart1.Location = new System.Drawing.Point(769, 2);
-            this.BtnTimerStart1.Name = "BtnTimerStart1";
-            this.BtnTimerStart1.Size = new System.Drawing.Size(75, 23);
-            this.BtnTimerStart1.TabIndex = 138;
-            this.BtnTimerStart1.Text = "Start ";
-            this.BtnTimerStart1.UseVisualStyleBackColor = true;
-            this.BtnTimerStart1.Click += new System.EventHandler(this.BtnTimerStart_Click);
+            this.BtnTimerStart.Location = new System.Drawing.Point(715, 2);
+            this.BtnTimerStart.Name = "BtnTimerStart";
+            this.BtnTimerStart.Size = new System.Drawing.Size(75, 23);
+            this.BtnTimerStart.TabIndex = 138;
+            this.BtnTimerStart.Text = "Start ";
+            this.BtnTimerStart.UseVisualStyleBackColor = true;
+            this.BtnTimerStart.Click += new System.EventHandler(this.BtnTimerStart_Click);
             // 
-            // BtnTimerStop1
+            // BtnTimerStop
             // 
-            this.BtnTimerStop1.Location = new System.Drawing.Point(860, 2);
-            this.BtnTimerStop1.Name = "BtnTimerStop1";
-            this.BtnTimerStop1.Size = new System.Drawing.Size(75, 23);
-            this.BtnTimerStop1.TabIndex = 139;
-            this.BtnTimerStop1.Text = "Stop ";
-            this.BtnTimerStop1.UseVisualStyleBackColor = true;
-            this.BtnTimerStop1.Click += new System.EventHandler(this.BtnTimerStop_Click);
+            this.BtnTimerStop.Location = new System.Drawing.Point(796, 3);
+            this.BtnTimerStop.Name = "BtnTimerStop";
+            this.BtnTimerStop.Size = new System.Drawing.Size(75, 23);
+            this.BtnTimerStop.TabIndex = 139;
+            this.BtnTimerStop.Text = "Stop ";
+            this.BtnTimerStop.UseVisualStyleBackColor = true;
+            this.BtnTimerStop.Click += new System.EventHandler(this.BtnTimerStop_Click);
             // 
             // LblRealTime1
             // 
             this.LblRealTime1.AutoSize = true;
             this.LblRealTime1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRealTime1.Location = new System.Drawing.Point(685, 8);
+            this.LblRealTime1.Location = new System.Drawing.Point(587, 9);
             this.LblRealTime1.Name = "LblRealTime1";
             this.LblRealTime1.Size = new System.Drawing.Size(86, 13);
             this.LblRealTime1.TabIndex = 140;
@@ -618,26 +609,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrafiekKelvin1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea8.Name = "ChartArea1";
-            this.GrafiekKelvin1.ChartAreas.Add(chartArea8);
+            chartArea17.Name = "ChartArea1";
+            this.GrafiekKelvin1.ChartAreas.Add(chartArea17);
             this.GrafiekKelvin1.DataSource = this.tblTemperatureBindingSource;
-            legend8.Name = "Legend1";
-            this.GrafiekKelvin1.Legends.Add(legend8);
+            legend17.Name = "Legend1";
+            this.GrafiekKelvin1.Legends.Add(legend17);
             this.GrafiekKelvin1.Location = new System.Drawing.Point(0, 338);
             this.GrafiekKelvin1.Name = "GrafiekKelvin1";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "Sensor 1: Kelvin";
-            series5.XValueMember = "DateTime";
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series5.YValueMembers = "TemperatureKelvin";
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.GrafiekKelvin1.Series.Add(series5);
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series11.Legend = "Legend1";
+            series11.Name = "Sensor 1: Kelvin";
+            series11.XValueMember = "DateTime";
+            series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series11.YValueMembers = "TemperatureKelvin";
+            series11.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.GrafiekKelvin1.Series.Add(series11);
             this.GrafiekKelvin1.Size = new System.Drawing.Size(993, 463);
             this.GrafiekKelvin1.TabIndex = 147;
-            title8.Name = "Title1";
-            this.GrafiekKelvin1.Titles.Add(title8);
+            title17.Name = "Title1";
+            this.GrafiekKelvin1.Titles.Add(title17);
             this.GrafiekKelvin1.Visible = false;
             // 
             // grafiekFarhenheid1
@@ -646,26 +637,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grafiekFarhenheid1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea7.Name = "ChartArea1";
-            this.grafiekFarhenheid1.ChartAreas.Add(chartArea7);
+            chartArea16.Name = "ChartArea1";
+            this.grafiekFarhenheid1.ChartAreas.Add(chartArea16);
             this.grafiekFarhenheid1.DataSource = this.tblTemperatureBindingSource;
-            legend7.Name = "Legend1";
-            this.grafiekFarhenheid1.Legends.Add(legend7);
+            legend16.Name = "Legend1";
+            this.grafiekFarhenheid1.Legends.Add(legend16);
             this.grafiekFarhenheid1.Location = new System.Drawing.Point(0, 338);
             this.grafiekFarhenheid1.Name = "grafiekFarhenheid1";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "Sensor 1: Farhenheid";
-            series4.XValueMember = "DateTime";
-            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series4.YValueMembers = "TemperatureFarhenheid";
-            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.grafiekFarhenheid1.Series.Add(series4);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Legend = "Legend1";
+            series10.Name = "Sensor 1: Farhenheid";
+            series10.XValueMember = "DateTime";
+            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series10.YValueMembers = "TemperatureFarhenheid";
+            series10.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.grafiekFarhenheid1.Series.Add(series10);
             this.grafiekFarhenheid1.Size = new System.Drawing.Size(993, 463);
             this.grafiekFarhenheid1.TabIndex = 148;
-            title7.Name = "Title1";
-            this.grafiekFarhenheid1.Titles.Add(title7);
+            title16.Name = "Title1";
+            this.grafiekFarhenheid1.Titles.Add(title16);
             this.grafiekFarhenheid1.Visible = false;
             // 
             // GrafiekTemperatuur2
@@ -674,26 +665,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrafiekTemperatuur2.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea6.Name = "ChartArea1";
-            this.GrafiekTemperatuur2.ChartAreas.Add(chartArea6);
+            chartArea15.Name = "ChartArea1";
+            this.GrafiekTemperatuur2.ChartAreas.Add(chartArea15);
             this.GrafiekTemperatuur2.DataSource = this.tblTemperatureBindingSource;
-            legend6.Name = "Legend1";
-            this.GrafiekTemperatuur2.Legends.Add(legend6);
+            legend15.Name = "Legend1";
+            this.GrafiekTemperatuur2.Legends.Add(legend15);
             this.GrafiekTemperatuur2.Location = new System.Drawing.Point(0, 338);
             this.GrafiekTemperatuur2.Name = "GrafiekTemperatuur2";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "Sensor 2: Celsius";
-            series3.XValueMember = "DateTime";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series3.YValueMembers = "TemperatureCelsius";
-            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.GrafiekTemperatuur2.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Legend = "Legend1";
+            series9.Name = "Sensor 2: Celsius";
+            series9.XValueMember = "DateTime";
+            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series9.YValueMembers = "TemperatureCelsius";
+            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.GrafiekTemperatuur2.Series.Add(series9);
             this.GrafiekTemperatuur2.Size = new System.Drawing.Size(993, 463);
             this.GrafiekTemperatuur2.TabIndex = 149;
-            title6.Name = "Title1";
-            this.GrafiekTemperatuur2.Titles.Add(title6);
+            title15.Name = "Title1";
+            this.GrafiekTemperatuur2.Titles.Add(title15);
             this.GrafiekTemperatuur2.Visible = false;
             // 
             // grafiekFarhenheid2
@@ -702,26 +693,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grafiekFarhenheid2.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea5.Name = "ChartArea1";
-            this.grafiekFarhenheid2.ChartAreas.Add(chartArea5);
+            chartArea14.Name = "ChartArea1";
+            this.grafiekFarhenheid2.ChartAreas.Add(chartArea14);
             this.grafiekFarhenheid2.DataSource = this.tblTemperatureBindingSource;
-            legend5.Name = "Legend1";
-            this.grafiekFarhenheid2.Legends.Add(legend5);
+            legend14.Name = "Legend1";
+            this.grafiekFarhenheid2.Legends.Add(legend14);
             this.grafiekFarhenheid2.Location = new System.Drawing.Point(0, 338);
             this.grafiekFarhenheid2.Name = "grafiekFarhenheid2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Sensor 2: Farhenheid";
-            series2.XValueMember = "DateTime";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series2.YValueMembers = "TemperatureFarhenheid";
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.grafiekFarhenheid2.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Legend1";
+            series8.Name = "Sensor 2: Farhenheid";
+            series8.XValueMember = "DateTime";
+            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series8.YValueMembers = "TemperatureFarhenheid";
+            series8.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.grafiekFarhenheid2.Series.Add(series8);
             this.grafiekFarhenheid2.Size = new System.Drawing.Size(993, 463);
             this.grafiekFarhenheid2.TabIndex = 150;
-            title5.Name = "Title1";
-            this.grafiekFarhenheid2.Titles.Add(title5);
+            title14.Name = "Title1";
+            this.grafiekFarhenheid2.Titles.Add(title14);
             this.grafiekFarhenheid2.Visible = false;
             // 
             // GrafiekKelvin2
@@ -730,35 +721,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrafiekKelvin2.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            this.GrafiekKelvin2.ChartAreas.Add(chartArea4);
+            chartArea13.Name = "ChartArea1";
+            this.GrafiekKelvin2.ChartAreas.Add(chartArea13);
             this.GrafiekKelvin2.DataSource = this.tblTemperatureBindingSource;
-            legend4.Name = "Legend1";
-            this.GrafiekKelvin2.Legends.Add(legend4);
+            legend13.Name = "Legend1";
+            this.GrafiekKelvin2.Legends.Add(legend13);
             this.GrafiekKelvin2.Location = new System.Drawing.Point(0, 338);
             this.GrafiekKelvin2.Name = "GrafiekKelvin2";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Sensor 2: Kelvin";
-            series1.XValueMember = "DateTime";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            series1.YValueMembers = "TemperatureKelvin";
-            series1.YValuesPerPoint = 2;
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.GrafiekKelvin2.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Legend = "Legend1";
+            series7.Name = "Sensor 2: Kelvin";
+            series7.XValueMember = "DateTime";
+            series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            series7.YValueMembers = "TemperatureKelvin";
+            series7.YValuesPerPoint = 2;
+            series7.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.GrafiekKelvin2.Series.Add(series7);
             this.GrafiekKelvin2.Size = new System.Drawing.Size(993, 463);
             this.GrafiekKelvin2.TabIndex = 151;
-            title4.Name = "Title1";
-            this.GrafiekKelvin2.Titles.Add(title4);
+            title13.Name = "Title1";
+            this.GrafiekKelvin2.Titles.Add(title13);
             this.GrafiekKelvin2.Visible = false;
-            // 
-            // BtnRefreshLocation
-            // 
-            this.BtnRefreshLocation.Location = new System.Drawing.Point(0, 0);
-            this.BtnRefreshLocation.Name = "BtnRefreshLocation";
-            this.BtnRefreshLocation.Size = new System.Drawing.Size(75, 23);
-            this.BtnRefreshLocation.TabIndex = 157;
             // 
             // PnlSensor2
             // 
@@ -791,7 +775,7 @@
             // 
             // PnlActiveS2
             // 
-            this.PnlActiveS2.BackColor = System.Drawing.Color.Lime;
+            this.PnlActiveS2.BackColor = System.Drawing.Color.Transparent;
             this.PnlActiveS2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlActiveS2.Controls.Add(this.BtnSettingsSensor2);
             this.PnlActiveS2.Location = new System.Drawing.Point(221, 160);
@@ -912,17 +896,17 @@
             this.PnlHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlHeader.Controls.Add(this.label2);
             this.PnlHeader.Controls.Add(this.BtnLogout);
-            this.PnlHeader.Controls.Add(this.btnInstellingen);
+            this.PnlHeader.Controls.Add(this.BtnInstellingen);
             this.PnlHeader.Location = new System.Drawing.Point(0, 0);
             this.PnlHeader.Name = "PnlHeader";
-            this.PnlHeader.Size = new System.Drawing.Size(993, 49);
+            this.PnlHeader.Size = new System.Drawing.Size(993, 53);
             this.PnlHeader.TabIndex = 155;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 13);
+            this.label2.Location = new System.Drawing.Point(3, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(457, 20);
             this.label2.TabIndex = 164;
@@ -935,9 +919,9 @@
             this.PnlFooter.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PnlFooter.Controls.Add(this.TxbPcUser);
             this.PnlFooter.Controls.Add(this.TxbLastConnTime);
-            this.PnlFooter.Controls.Add(this.LblUserApp);
             this.PnlFooter.Controls.Add(this.label3);
             this.PnlFooter.Controls.Add(this.TxbUserLoggedIn);
+            this.PnlFooter.Controls.Add(this.LblUserApp);
             this.PnlFooter.Controls.Add(this.LblPc);
             this.PnlFooter.Controls.Add(this.BtnStatusSqlConnection);
             this.PnlFooter.Controls.Add(this.LblStatusSql);
@@ -966,21 +950,11 @@
             this.TxbLastConnTime.Size = new System.Drawing.Size(121, 22);
             this.TxbLastConnTime.TabIndex = 169;
             // 
-            // LblUserApp
-            // 
-            this.LblUserApp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.LblUserApp.AutoSize = true;
-            this.LblUserApp.Location = new System.Drawing.Point(654, 20);
-            this.LblUserApp.Name = "LblUserApp";
-            this.LblUserApp.Size = new System.Drawing.Size(67, 13);
-            this.LblUserApp.TabIndex = 162;
-            this.LblUserApp.Text = "Ingelogd als:";
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(327, 18);
+            this.label3.Location = new System.Drawing.Point(265, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 13);
             this.label3.TabIndex = 164;
@@ -995,6 +969,16 @@
             this.TxbUserLoggedIn.ReadOnly = true;
             this.TxbUserLoggedIn.Size = new System.Drawing.Size(100, 22);
             this.TxbUserLoggedIn.TabIndex = 163;
+            // 
+            // LblUserApp
+            // 
+            this.LblUserApp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblUserApp.AutoSize = true;
+            this.LblUserApp.Location = new System.Drawing.Point(634, 18);
+            this.LblUserApp.Name = "LblUserApp";
+            this.LblUserApp.Size = new System.Drawing.Size(67, 13);
+            this.LblUserApp.TabIndex = 162;
+            this.LblUserApp.Text = "Ingelogd als:";
             // 
             // LblPc
             // 
@@ -1185,7 +1169,7 @@
             // 
             // PnlActiveS1
             // 
-            this.PnlActiveS1.BackColor = System.Drawing.Color.Lime;
+            this.PnlActiveS1.BackColor = System.Drawing.Color.Transparent;
             this.PnlActiveS1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlActiveS1.Controls.Add(this.BtnSettingsSensor1);
             this.PnlActiveS1.Location = new System.Drawing.Point(221, 160);
@@ -1211,14 +1195,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.BtnTimerStop1);
+            this.panel1.Controls.Add(this.BtnTimerStop);
             this.panel1.Controls.Add(this.DtpVan);
             this.panel1.Controls.Add(this.LblVan);
             this.panel1.Controls.Add(this.LblTot);
             this.panel1.Controls.Add(this.DtpTot);
             this.panel1.Controls.Add(this.BtnOpvragenVanTot);
             this.panel1.Controls.Add(this.LblRealTime1);
-            this.panel1.Controls.Add(this.BtnTimerStart1);
+            this.panel1.Controls.Add(this.BtnTimerStart);
             this.panel1.Location = new System.Drawing.Point(0, 275);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(993, 31);
@@ -1304,17 +1288,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrafiekCelsiusAll.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            this.GrafiekCelsiusAll.ChartAreas.Add(chartArea3);
+            chartArea12.Name = "ChartArea1";
+            this.GrafiekCelsiusAll.ChartAreas.Add(chartArea12);
             this.GrafiekCelsiusAll.DataSource = this.tblTemperatureBindingSource;
-            legend3.Name = "Legend1";
-            this.GrafiekCelsiusAll.Legends.Add(legend3);
+            legend12.Name = "Legend1";
+            this.GrafiekCelsiusAll.Legends.Add(legend12);
             this.GrafiekCelsiusAll.Location = new System.Drawing.Point(0, 338);
             this.GrafiekCelsiusAll.Name = "GrafiekCelsiusAll";
             this.GrafiekCelsiusAll.Size = new System.Drawing.Size(993, 463);
             this.GrafiekCelsiusAll.TabIndex = 166;
-            title3.Name = "Title1";
-            this.GrafiekCelsiusAll.Titles.Add(title3);
+            title12.Name = "Title1";
+            this.GrafiekCelsiusAll.Titles.Add(title12);
             this.GrafiekCelsiusAll.Visible = false;
             // 
             // GrafiekKelvinAll
@@ -1323,17 +1307,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrafiekKelvinAll.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.GrafiekKelvinAll.ChartAreas.Add(chartArea2);
+            chartArea11.Name = "ChartArea1";
+            this.GrafiekKelvinAll.ChartAreas.Add(chartArea11);
             this.GrafiekKelvinAll.DataSource = this.tblTemperatureBindingSource;
-            legend2.Name = "Legend1";
-            this.GrafiekKelvinAll.Legends.Add(legend2);
+            legend11.Name = "Legend1";
+            this.GrafiekKelvinAll.Legends.Add(legend11);
             this.GrafiekKelvinAll.Location = new System.Drawing.Point(0, 338);
             this.GrafiekKelvinAll.Name = "GrafiekKelvinAll";
             this.GrafiekKelvinAll.Size = new System.Drawing.Size(993, 463);
             this.GrafiekKelvinAll.TabIndex = 167;
-            title2.Name = "Title1";
-            this.GrafiekKelvinAll.Titles.Add(title2);
+            title11.Name = "Title1";
+            this.GrafiekKelvinAll.Titles.Add(title11);
             this.GrafiekKelvinAll.Visible = false;
             // 
             // GrafiekFarhenheidAll
@@ -1342,17 +1326,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrafiekFarhenheidAll.BackImageTransparentColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            this.GrafiekFarhenheidAll.ChartAreas.Add(chartArea1);
+            chartArea10.Name = "ChartArea1";
+            this.GrafiekFarhenheidAll.ChartAreas.Add(chartArea10);
             this.GrafiekFarhenheidAll.DataSource = this.tblTemperatureBindingSource;
-            legend1.Name = "Legend1";
-            this.GrafiekFarhenheidAll.Legends.Add(legend1);
+            legend10.Name = "Legend1";
+            this.GrafiekFarhenheidAll.Legends.Add(legend10);
             this.GrafiekFarhenheidAll.Location = new System.Drawing.Point(0, 338);
             this.GrafiekFarhenheidAll.Name = "GrafiekFarhenheidAll";
             this.GrafiekFarhenheidAll.Size = new System.Drawing.Size(993, 463);
             this.GrafiekFarhenheidAll.TabIndex = 168;
-            title1.Name = "Title1";
-            this.GrafiekFarhenheidAll.Titles.Add(title1);
+            title10.Name = "Title1";
+            this.GrafiekFarhenheidAll.Titles.Add(title10);
             this.GrafiekFarhenheidAll.Visible = false;
             // 
             // TbDigiClock
@@ -1386,7 +1370,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PnlFooter);
             this.Controls.Add(this.PnlHeader);
-            this.Controls.Add(this.BtnRefreshLocation);
             this.Controls.Add(this.PnlSensor2);
             this.Controls.Add(this.PnlSensor1);
             this.Controls.Add(this.GrafiekKelvin2);
@@ -1396,7 +1379,6 @@
             this.Controls.Add(this.GrafiekKelvin1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GrafiekTemperatuur);
-            this.Controls.Add(this.BtnLocatieSensorOpslaan);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1405,7 +1387,7 @@
             this.Text = "Temperatuur";
             this.TransparencyKey = System.Drawing.Color.Navy;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Temperatuur_FormClosed);
-            this.Load += new System.EventHandler(this.Temperatuur_Load);
+            this.Load += new System.EventHandler(this.Temperatuur_Load_1);
             this.Shown += new System.EventHandler(this.Temperatuur_Shown);
             this.Instellingen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GrafiekTemperatuur)).EndInit();
@@ -1445,7 +1427,6 @@
         private System.Windows.Forms.Label LblTot;
         private System.Windows.Forms.Label LblVan;
         private System.Windows.Forms.DateTimePicker DtpVan;
-        private System.Windows.Forms.Button BtnLocatieSensorOpslaan;
         private System.Windows.Forms.Button BtnLogout;
         private System.Windows.Forms.ContextMenuStrip Instellingen;
         private System.Windows.Forms.ToolStripMenuItem test2ToolStripMenuItem;
@@ -1464,12 +1445,12 @@
         private System.Windows.Forms.ToolStripMenuItem meldingenUitschakelenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contactToolStripMenuItem;
-        private System.Windows.Forms.Button btnInstellingen;
+        private System.Windows.Forms.Button BtnInstellingen;
         private System.Windows.Forms.DataVisualization.Charting.Chart GrafiekTemperatuur;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label LblRealTime1;
-        private System.Windows.Forms.Button BtnTimerStop1;
-        private System.Windows.Forms.Button BtnTimerStart1;
+        private System.Windows.Forms.Button BtnTimerStop;
+        private System.Windows.Forms.Button BtnTimerStart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ToolStripMenuItem orgineelToolStripMenuItem;
@@ -1481,7 +1462,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart GrafiekTemperatuur2;
         private System.Windows.Forms.DataVisualization.Charting.Chart GrafiekKelvin2;
         private System.Windows.Forms.DataVisualization.Charting.Chart grafiekFarhenheid2;
-        private System.Windows.Forms.Button BtnRefreshLocation;
         private System.Windows.Forms.Panel PnlSensor2;
         private System.Windows.Forms.Panel PnlHeader;
         private System.Windows.Forms.Panel PnlFooter;
@@ -1556,4 +1536,3 @@
         private System.Windows.Forms.ToolStripMenuItem duitsToolStripMenuItem;
     }
 }
-

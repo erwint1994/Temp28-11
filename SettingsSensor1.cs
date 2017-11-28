@@ -5,22 +5,23 @@ using pasTemp;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-using log4net;
+using Vertalen;
+
 namespace WindowsFormsApp1
 {
     public partial class SettingsSensor1 : Form
     {
         public Temperatuur Parentform1 = null;
+        public Temperatuur Parentform2 = null;
+        public Temperatuur Parentform3 = null;
+        public Temperatuur Parentform4 = null;
         string MyConnectionString2 = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
-        (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public SettingsSensor1()
         {
             InitializeComponent();
         }
         private void SettingsSensor1_Shown(object sender, EventArgs e)
         {
-            log.Info("Load SettingsSensor1.cs");
             FillSettingsSensor1();
             if (Parentform1.CheckSelectRdbCelsius1 == true)
             {
@@ -49,12 +50,15 @@ namespace WindowsFormsApp1
                 TbMinimumtemperatuurFarhenheid.Enabled = true;
                 TbMaximumtemperatuurFarhenheid.Enabled = true;
             }
+            // Set focus to control
             TbLocatie.Focus();
-            log.Info("Focus TbLocatie");
+            // Set text-selection to end
+            TbLocatie.SelectionStart = TbLocatie.Text.Length == 0 ? 0 : TbLocatie.Text.Length - 1;
+            // Set text-selection length (in your case 0 = no blue text)
+            TbLocatie.SelectionLength = 0;
         }
         private void BtnLocatieSensorOpslaan_Click(object sender, EventArgs e)
         {
-            log.Info("BtnLocatieSensorOpslaan clicked");
             if (String.IsNullOrEmpty(TbLocatie.Text))
             {
                 MessageBox.Show("Locatie is niet ingevuld.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -217,5 +221,29 @@ namespace WindowsFormsApp1
                 throw;
             }
         }
+
+        private void SettingsSensor1_Load(object sender, EventArgs e)
+        {
+            if(Engels == true)
+            {
+                Vertaal.VertaalControlsEN(this, "EN");
+            }
+
+            if(Duits == true)
+            {
+                Vertaal.VertaalControlsDE(this, "DE");
+            }
+
+            if (Nederlands == true)
+            {
+                Vertaal.VertaalControlsNL(this, "NL");
+            }
+        }
+
+        public bool Engels => Parentform2.Engels;
+
+        public bool Duits => Parentform3.Duits;
+
+        public bool Nederlands => Parentform3.Nederlands;
     }
 }

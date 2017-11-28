@@ -67,7 +67,7 @@
             this.DtgMailMinMax.ShowRowErrors = false;
             this.DtgMailMinMax.Size = new System.Drawing.Size(946, 229);
             this.DtgMailMinMax.TabIndex = 3;
-            this.DtgMailMinMax.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.DataGridView1_CellStateChanged);
+            this.DtgMailMinMax.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dataGridView1_CellStateChanged);
             // 
             // BtnEdit
             // 
@@ -179,9 +179,9 @@
             this.DtgServiceError.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DtgServiceError.ShowEditingIcon = false;
             this.DtgServiceError.ShowRowErrors = false;
-            this.DtgServiceError.Size = new System.Drawing.Size(946, 261);
+            this.DtgServiceError.Size = new System.Drawing.Size(946, 229);
             this.DtgServiceError.TabIndex = 19;
-            this.DtgServiceError.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.DataGridView2_CellStateChanged);
+            this.DtgServiceError.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dataGridView2_CellStateChanged);
             // 
             // LblBeschrijvingen2
             // 
@@ -247,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 593);
+            this.ClientSize = new System.Drawing.Size(1030, 593);
             this.Controls.Add(this.BtnEdit2);
             this.Controls.Add(this.BtnAdd2);
             this.Controls.Add(this.BtnDelete2);
@@ -271,6 +271,7 @@
             this.Name = "Gebruiker";
             this.Text = "Gebruikers beheren";
             this.Load += new System.EventHandler(this.AddMailUsers_Load);
+            this.Shown += new System.EventHandler(this.Gebruiker_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.DtgMailMinMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtgServiceError)).EndInit();
             this.ResumeLayout(false);
