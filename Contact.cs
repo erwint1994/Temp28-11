@@ -11,22 +11,22 @@ using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using Vertalen;
-using log4net;
+
 namespace WindowsFormsApp1
 {
     public partial class Contact : Form
     {
+        public Temperatuur Parentform1 = null;
+        public Temperatuur Parentform2 = null;
+        public Temperatuur Parentform3 = null;
+        public Temperatuur Parentform4 = null;
         public Contact()
         {
             InitializeComponent();
         }
-        public Temperatuur Parentform1 = null;
-        // url API
         string BasePath = "http://api.pasys.nl/msgcenter/api/MsgJob/PostMsgJob";
         HttpClient HC = new HttpClient();
         DateTime NextMailAllowed = DateTime.Now;
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
-            (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public async Task<string> SendEMail()
         {
@@ -75,6 +75,7 @@ namespace WindowsFormsApp1
             string json = new JavaScriptSerializer().Serialize(rootObject);
             return await HTTPPost("a", json);
         }
+
         public async Task<string> HTTPPost(string ARequest, string AParams)
         {
             if (NextMailAllowed <= DateTime.Now)
@@ -83,7 +84,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                log.Info("NextMailAllowed limit reached");
                 return "";
             }
 
@@ -96,23 +96,22 @@ namespace WindowsFormsApp1
             {
                 if (HR.IsSuccessStatusCode)
                 {
-                    log.Info("Mail send");
+                   // MessageBox.Show("Mail verzonden");
                     string HCRes = await HR.Content.ReadAsStringAsync();
                     return HCRes;
                 }
                 else
                 {
-                    log.Error("Error send mail");
                     return "FOUT !";
                 }
             }
             catch (Exception e)
             {
-                log.Error("Error send mai;", e);
                 MessageBox.Show(e.Message);
                 return "";
             }
         }
+
         private async void BtnVerzenden_Click_1(object sender, EventArgs e)
         {
             TcpClient tClient = new TcpClient("gmail-smtp-in.l.google.com", 25);
@@ -123,10 +122,10 @@ namespace WindowsFormsApp1
             StreamReader reader = new StreamReader(netStream);
             ResponseString = reader.ReadLine();
             /* Perform HELO to SMTP Server and get Response */
-            dataBuffer = BytesFromString("" + CRLF);
+            dataBuffer = BytesFromString("HELO Nordin" + CRLF);
             netStream.Write(dataBuffer, 0, dataBuffer.Length);
             ResponseString = reader.ReadLine();
-            dataBuffer = BytesFromString("MAIL FROM:<1028727@idcollege.nl>" + CRLF);
+            dataBuffer = BytesFromString("MAIL FROM:<nordinvanderleije@gmail.com>" + CRLF);
             netStream.Write(dataBuffer, 0, dataBuffer.Length);
             ResponseString = reader.ReadLine();
             /* Read Response of the RCPT TO Message to know from google if it exist or not */
@@ -163,28 +162,60 @@ namespace WindowsFormsApp1
             {
                 await SendEMail();
                 MessageBox.Show("Email is verzonden.");
-                log.Info("Mail send");
                 this.Close();
+                /* QUITE CONNECTION */
                 dataBuffer = BytesFromString("QUITE" + CRLF);
                 netStream.Write(dataBuffer, 0, dataBuffer.Length);
                 tClient.Close();
             }          
         }
+
         private void Contact_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txbVoornaam;
-            if (Parentform1.Engels == true)
+
+            if (Engels == true)
             {
-                Vertaal.DoVertaalForm(this, "EN");
+                Vertaal.VertaalControlsEN(this, "EN");
+            }
+
+            if (Duits == true)
+            {
+                Vertaal.VertaalControlsDE(this, "DE");
+            }
+
+            if (Nederlands == true)
+            {
+                Vertaal.VertaalControlsNL(this, "NL");
             }
         }
+
         private byte[] BytesFromString(string str)
         {
             return Encoding.ASCII.GetBytes(str);
         }
+
         private int GetResponseCode(string ResponseString)
         {
             return int.Parse(ResponseString.Substring(0, 3));
         }
+
+        public IEnumerable<Control> GetAllControls(Control root)
+        {
+            foreach (Control control in root.Controls)
+            {
+                foreach (Control child in GetAllControls(control))
+                {
+                    yield return child;
+                }
+            }
+            yield return root;
+        }
+
+        public bool Engels => Parentform2.Engels;
+
+        public bool Duits => Parentform3.Duits;
+
+        public bool Nederlands => Parentform3.Nederlands;
     }
 }

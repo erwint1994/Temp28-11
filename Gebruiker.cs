@@ -11,18 +11,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using paSSQL;
-using log4net;
+using Vertalen;
+
 namespace WindowsFormsApp1
 {
     public partial class Gebruiker : Form
     {
         string MyConnectionString2 = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+        public Temperatuur Parentform1 { get; set; }
         private int selectedCellRow = 0;
         private int selectedCellColumn = 0;
-        public new Gebruiker ParentForm { get; set; }
         public Gebruiker ParentForm2 { get; set; }
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
-            (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         // load
         public Gebruiker()
         {
@@ -30,58 +29,61 @@ namespace WindowsFormsApp1
         }
         public void AddMailUsers_Load(object sender, EventArgs e)
         {
-            log.Info("Load Gebruiker.cs");
+            if (Parentform1.Engels == true)
+            {
+                Vertaal.VertaalControlsEN(this, "EN");
+            }
+
+            if (Parentform1.Duits == true)
+            {
+                Vertaal.VertaalControlsDE(this, "DE");
+            }
+
+            if (Parentform1.Nederlands == true)
+            {
+                Vertaal.VertaalControlsNL(this, "NL");
+            }
+
             SelectUsers();
-            log.Info("SelectUsers (F)");
             SelectUsersWFApp();
-            log.Info("SelectUsersWFApp (F)");
         }
         // buttons mail van service
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            log.Info("BtnAdd clicked, open gebruikerToevoegen.cs");
             GebruikerToevoegen gebruikersToevoegen = new GebruikerToevoegen();
-            gebruikersToevoegen.Show();
+            gebruikersToevoegen.Parentform1 = Parentform1;
+            gebruikersToevoegen.ShowDialog();
             gebruikersToevoegen.Location = new Point(100, 100);
-            if (ParentForm2 != null)
-                ParentForm2.Refresh();
-            Close();
+            if (ParentForm2 == null)
+            {
+                SelectUsers();
+            }             
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            log.Info("BtnDelete clicked");
             DeleteRecord();
-            log.Info("DeleteRecord (F)");         
             SelectUsers();
-            log.Info("SelectUsers (F)");
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            log.Info("BtnEdit clicked");
             GetId();
-            log.Info("getId (F)");
-            GebruikerBewerken gebruikerbewerken= new GebruikerBewerken();
-            gebruikerbewerken.Show();
-            log.Info("Open GebruikersBewerken.cs");
-            if (ParentForm2 != null)
-                ParentForm2.Refresh();
-            Close();
+            GebruikerBewerken gebruikerbewerken = new GebruikerBewerken();
+            gebruikerbewerken.Parentform1 = Parentform1;
+            gebruikerbewerken.ShowDialog();
+            if (ParentForm2 == null)
+            {
+                SelectUsers();
+            }
         }
         private void BtnUnban_Click(object sender, EventArgs e)
         {
-            log.Info("BtnUnban clicked");
             UnBanAccountMail();
-            log.Info("UnBanAccountMail (F)");
             SelectUsers();
-            log.Info("SelectUsers (F)");
         }
         private void BtnBan_Click(object sender, EventArgs e)
         {
-            log.Info("BtnBan clicked");
             BanAccountMail();
-            log.Info("BanAccountMail (F)");
             SelectUsers();
-            log.Info("SelectUsers (F)");
         }
         // query (mail service)
         public void SelectUsers()
@@ -93,44 +95,34 @@ namespace WindowsFormsApp1
             DtgMailMinMax.Columns[3].Width = 100;
             DtgMailMinMax.Columns[4].Width = 235;
             DtgMailMinMax.Columns[5].Width = 100;
-            log.Info("SELECT * FROM tbl_Emailadress");
         }
         public void DeleteRecord()
         {
             using (SqlConnection connection2 = new SqlConnection(MyConnectionString2))
             {
-                try
+                if (DtgMailMinMax.SelectedRows.Count > 0)
                 {
-                    if (DtgMailMinMax.SelectedRows.Count > 0)
+                    int selectedIndex = DtgMailMinMax.SelectedRows[0].Index;
+                    int rowID = int.Parse(DtgMailMinMax[0, selectedIndex].Value.ToString());
+                    string sql = "DELETE FROM tbl_EmailAdress WHERE id=@RowID";
+                    SqlCommand deleteRecord = new SqlCommand
                     {
-                        int selectedIndex = DtgMailMinMax.SelectedRows[0].Index;
-                        int rowID = int.Parse(DtgMailMinMax[0, selectedIndex].Value.ToString());
-                        string sql = "DELETE FROM tbl_EmailAdress WHERE id=@RowID";
-                        SqlCommand deleteRecord = new SqlCommand
-                        {
-                            Connection = connection2,
-                            CommandType = CommandType.Text,
-                            CommandText = sql
-                        };
-                        SqlParameter RowParameter = new SqlParameter
-                        {
-                            ParameterName = "@RowID",
-                            SqlDbType = SqlDbType.Int,
-                            IsNullable = false,
-                            Value = rowID
-                        };
-                        deleteRecord.Parameters.Add(RowParameter);
-                        deleteRecord.Connection.Open();
-                        deleteRecord.ExecuteNonQuery();
-                        deleteRecord.Connection.Close();
-                    }
-                    log.Info("DELETE FROM tbl_EmailAdress");
+                        Connection = connection2,
+                        CommandType = CommandType.Text,
+                        CommandText = sql
+                    };
+                    SqlParameter RowParameter = new SqlParameter
+                    {
+                        ParameterName = "@RowID",
+                        SqlDbType = SqlDbType.Int,
+                        IsNullable = false,
+                        Value = rowID
+                    };
+                    deleteRecord.Parameters.Add(RowParameter);
+                    deleteRecord.Connection.Open();
+                    deleteRecord.ExecuteNonQuery();
+                    deleteRecord.Connection.Close();
                 }
-                catch (Exception E)
-                {
-                    log.Error("ERROR DELETE FROM tbl_EmailAdress", E);
-                    MessageBox.Show("Error delete records");
-                }              
             }          
         }
         public void GetId()
@@ -139,11 +131,9 @@ namespace WindowsFormsApp1
             {
                 int id = Convert.ToInt32(DtgMailMinMax.SelectedRows[0].Cells[0].Value);
                 Rights.id = id;
-                log.Info("Get id from class rights");
             }
             catch(Exception E)
             {
-                log.Error("Can't get id from class rights");
                 MessageBox.Show(E.Message);
             }
         }
@@ -151,115 +141,90 @@ namespace WindowsFormsApp1
         {
             using (SqlConnection connection2 = new SqlConnection(MyConnectionString2))
             {
-                try
+                if (DtgMailMinMax.SelectedRows.Count > 0)
                 {
-                    if (DtgMailMinMax.SelectedRows.Count > 0)
+                    int selectedIndex = DtgMailMinMax.SelectedRows[0].Index;
+                    int rowID = int.Parse(DtgMailMinMax[0, selectedIndex].Value.ToString());
+                    string sql = "UPDATE tbl_EmailAdress SET Status='Ingeschakeld' WHERE id=@RowID";
+                    SqlCommand BanUser = new SqlCommand
                     {
-                        int selectedIndex = DtgMailMinMax.SelectedRows[0].Index;
-                        int rowID = int.Parse(DtgMailMinMax[0, selectedIndex].Value.ToString());
-                        string sql = "UPDATE tbl_EmailAdress SET Status='Ingeschakeld' WHERE id=@RowID";
-                        SqlCommand BanUser = new SqlCommand
-                        {
-                            Connection = connection2,
-                            CommandType = CommandType.Text,
-                            CommandText = sql
-                        };
-                        SqlParameter RowParameter = new SqlParameter
-                        {
-                            ParameterName = "@RowID",
-                            SqlDbType = SqlDbType.Int,
-                            IsNullable = false,
-                            Value = rowID
-                        };
-                        BanUser.Parameters.Add(RowParameter);
-                        BanUser.Connection.Open();
-                        BanUser.ExecuteNonQuery();
-                        BanUser.Connection.Close();
-                        log.Info("UPDATE status account to active");
-                    }
+                        Connection = connection2,
+                        CommandType = CommandType.Text,
+                        CommandText = sql
+                    };
+                    SqlParameter RowParameter = new SqlParameter
+                    {
+                        ParameterName = "@RowID",
+                        SqlDbType = SqlDbType.Int,
+                        IsNullable = false,
+                        Value = rowID
+                    };
+                    BanUser.Parameters.Add(RowParameter);
+                    BanUser.Connection.Open();
+                    BanUser.ExecuteNonQuery();
+                    BanUser.Connection.Close();
                 }
-                catch (Exception E)
-                {
-                    log.Error("BanAccountMail", E);
-                    MessageBox.Show("Error ban account");
-                }            
-            }             
+            }
+                
         }
         public void UnBanAccountMail()
         {
             using (SqlConnection connection2 = new SqlConnection(MyConnectionString2))
             {
-                try
+                if (DtgMailMinMax.SelectedRows.Count > 0)
                 {
-                    if (DtgMailMinMax.SelectedRows.Count > 0)
+                    int selectedIndex = DtgMailMinMax.SelectedRows[0].Index;
+                    int rowID = int.Parse(DtgMailMinMax[0, selectedIndex].Value.ToString());
+                    string sql = "UPDATE tbl_EmailAdress SET Status='Uitgeschakeld' WHERE id=@RowID";
+                    SqlCommand UnbanUser = new SqlCommand
                     {
-                        int selectedIndex = DtgMailMinMax.SelectedRows[0].Index;
-                        int rowID = int.Parse(DtgMailMinMax[0, selectedIndex].Value.ToString());
-                        string sql = "UPDATE tbl_EmailAdress SET Status='Uitgeschakeld' WHERE id=@RowID";
-                        SqlCommand UnbanUser = new SqlCommand
-                        {
-                            Connection = connection2,
-                            CommandType = CommandType.Text,
-                            CommandText = sql
-                        };
-                        SqlParameter RowParameter = new SqlParameter
-                        {
-                            ParameterName = "@RowID",
-                            SqlDbType = SqlDbType.Int,
-                            IsNullable = false,
-                            Value = rowID
-                        };
-                        UnbanUser.Parameters.Add(RowParameter);
-                        UnbanUser.Connection.Open();
-                        UnbanUser.ExecuteNonQuery();
-                        UnbanUser.Connection.Close();
-                    }
-                    log.Info("UPDATE status account to inactive");
+                        Connection = connection2,
+                        CommandType = CommandType.Text,
+                        CommandText = sql
+                    };
+                    SqlParameter RowParameter = new SqlParameter
+                    {
+                        ParameterName = "@RowID",
+                        SqlDbType = SqlDbType.Int,
+                        IsNullable = false,
+                        Value = rowID
+                    };
+                    UnbanUser.Parameters.Add(RowParameter);
+                    UnbanUser.Connection.Open();
+                    UnbanUser.ExecuteNonQuery();
+                    UnbanUser.Connection.Close();
                 }
-                catch (Exception E)
-                {
-                    log.Error("UnbanEmailAccount", E);
-                    MessageBox.Show("Error unban account");
-                }            
-            }              
+            }
+                
         }
         // query (mail wfapp)
         public void DeleteRecordWFApp()
         {
             using (SqlConnection connection2 = new SqlConnection(MyConnectionString2))
             {
-                try
+                if (DtgServiceError.SelectedRows.Count > 0)
                 {
-                    if (DtgServiceError.SelectedRows.Count > 0)
+                    int selectedIndex = DtgServiceError.SelectedRows[0].Index;
+                    int rowID = int.Parse(DtgServiceError[0, selectedIndex].Value.ToString());
+                    string sql = "DELETE FROM tbl_EmailAdressWFapp WHERE id=@RowID";
+                    SqlCommand deleteRecord = new SqlCommand
                     {
-                        int selectedIndex = DtgServiceError.SelectedRows[0].Index;
-                        int rowID = int.Parse(DtgServiceError[0, selectedIndex].Value.ToString());
-                        string sql = "DELETE FROM tbl_EmailAdressWFapp WHERE id=@RowID";
-                        SqlCommand deleteRecord = new SqlCommand
-                        {
-                            Connection = connection2,
-                            CommandType = CommandType.Text,
-                            CommandText = sql
-                        };
-                        SqlParameter RowParameter = new SqlParameter
-                        {
-                            ParameterName = "@RowID",
-                            SqlDbType = SqlDbType.Int,
-                            IsNullable = false,
-                            Value = rowID
-                        };
-                        deleteRecord.Parameters.Add(RowParameter);
-                        deleteRecord.Connection.Open();
-                        deleteRecord.ExecuteNonQuery();
-                        deleteRecord.Connection.Close();
-                    }
-                    log.Info("DELETE FROM tbl_EmailAdressWFApp");
+                        Connection = connection2,
+                        CommandType = CommandType.Text,
+                        CommandText = sql
+                    };
+                    SqlParameter RowParameter = new SqlParameter
+                    {
+                        ParameterName = "@RowID",
+                        SqlDbType = SqlDbType.Int,
+                        IsNullable = false,
+                        Value = rowID
+                    };
+                    deleteRecord.Parameters.Add(RowParameter);
+                    deleteRecord.Connection.Open();
+                    deleteRecord.ExecuteNonQuery();
+                    deleteRecord.Connection.Close();
                 }
-                catch (Exception E)
-                {
-                    log.Error("DeleteRecordWFApp (F)", E);
-                    MessageBox.Show("Error unban account Windows form app");
-                }                
             }              
         }
         public void SelectUsersWFApp()
@@ -276,83 +241,66 @@ namespace WindowsFormsApp1
             DtgServiceError.Columns[3].Width = 100;
             DtgServiceError.Columns[4].Width = 235;
             DtgServiceError.Columns[5].Width = 100;
-            log.Info("SELECT FROM tbl_EmailAdressWFApp");
         }
         public void BanAccountMailWFApp()
         {
             using (SqlConnection connection2 = new SqlConnection(MyConnectionString2))
             {
-                try
+                if (DtgServiceError.SelectedRows.Count > 0)
                 {
-                    if (DtgServiceError.SelectedRows.Count > 0)
+                    int selectedIndex = DtgServiceError.SelectedRows[0].Index;
+                    int rowID = int.Parse(DtgServiceError[0, selectedIndex].Value.ToString());
+                    string sql = "UPDATE tbl_EmailAdressWFapp SET Status='Ingeschakeld' WHERE id=@RowID";
+                    SqlCommand BanUser = new SqlCommand
                     {
-                        int selectedIndex = DtgServiceError.SelectedRows[0].Index;
-                        int rowID = int.Parse(DtgServiceError[0, selectedIndex].Value.ToString());
-                        string sql = "UPDATE tbl_EmailAdressWFapp SET Status='Ingeschakeld' WHERE id=@RowID";
-                        SqlCommand BanUser = new SqlCommand
-                        {
-                            Connection = connection2,
-                            CommandType = CommandType.Text,
-                            CommandText = sql
-                        };
-                        SqlParameter RowParameter = new SqlParameter
-                        {
-                            ParameterName = "@RowID",
-                            SqlDbType = SqlDbType.Int,
-                            IsNullable = false,
-                            Value = rowID
-                        };
-                        BanUser.Parameters.Add(RowParameter);
-                        BanUser.Connection.Open();
-                        BanUser.ExecuteNonQuery();
-                        BanUser.Connection.Close();
-                    }
-                    log.Info("UPDATE tbl_EmailAdressWFApp status to active");
+                        Connection = connection2,
+                        CommandType = CommandType.Text,
+                        CommandText = sql
+                    };
+                    SqlParameter RowParameter = new SqlParameter
+                    {
+                        ParameterName = "@RowID",
+                        SqlDbType = SqlDbType.Int,
+                        IsNullable = false,
+                        Value = rowID
+                    };
+                    BanUser.Parameters.Add(RowParameter);
+                    BanUser.Connection.Open();
+                    BanUser.ExecuteNonQuery();
+                    BanUser.Connection.Close();
                 }
-                catch (Exception E)
-                {
-                    log.Error("BanAccountMailWFApp", E);
-                    MessageBox.Show("BanAccountMailWFApp Error");
-                }            
             }
+
         }
         public void UnBanAccountMailWFApp()
         {
             using (SqlConnection connection2 = new SqlConnection(MyConnectionString2))
             {
-                try
+                if (DtgServiceError.SelectedRows.Count > 0)
                 {
-                    if (DtgServiceError.SelectedRows.Count > 0)
+                    int selectedIndex = DtgServiceError.SelectedRows[0].Index;
+                    int rowID = int.Parse(DtgServiceError[0, selectedIndex].Value.ToString());
+                    string sql = "UPDATE tbl_EmailAdressWFapp SET Status='Uitgeschakeld' WHERE id=@RowID";
+                    SqlCommand UnbanUser = new SqlCommand
                     {
-                        int selectedIndex = DtgServiceError.SelectedRows[0].Index;
-                        int rowID = int.Parse(DtgServiceError[0, selectedIndex].Value.ToString());
-                        string sql = "UPDATE tbl_EmailAdressWFapp SET Status='Uitgeschakeld' WHERE id=@RowID";
-                        SqlCommand UnbanUser = new SqlCommand
-                        {
-                            Connection = connection2,
-                            CommandType = CommandType.Text,
-                            CommandText = sql
-                        };
-                        SqlParameter RowParameter = new SqlParameter
-                        {
-                            ParameterName = "@RowID",
-                            SqlDbType = SqlDbType.Int,
-                            IsNullable = false,
-                            Value = rowID
-                        };
-                        UnbanUser.Parameters.Add(RowParameter);
-                        UnbanUser.Connection.Open();
-                        UnbanUser.ExecuteNonQuery();
-                        UnbanUser.Connection.Close();
-                    }
-                    log.Info("UPDATE tbl_EmailAdressWFApp status to active");
+                        Connection = connection2,
+                        CommandType = CommandType.Text,
+                        CommandText = sql
+                    };
+                    SqlParameter RowParameter = new SqlParameter
+                    {
+                        ParameterName = "@RowID",
+                        SqlDbType = SqlDbType.Int,
+                        IsNullable = false,
+                        Value = rowID
+                    };
+                    UnbanUser.Parameters.Add(RowParameter);
+                    UnbanUser.Connection.Open();
+                    UnbanUser.ExecuteNonQuery();
+                    UnbanUser.Connection.Close();
                 }
-                catch(Exception E)
-                {
-                    log.Error("UnBanAccountMailWFApp", E);
-                    MessageBox.Show("UnBanAccountMailWFApp Error");
-                }              
             }
+
         }
         public void GetIdWFApp()
         {
@@ -360,11 +308,9 @@ namespace WindowsFormsApp1
             {
                 int id = Convert.ToInt32(DtgServiceError.SelectedRows[0].Cells[0].Value);
                 Rights.id = id;
-                log.Info("Get id from class rights");
             }
             catch (Exception E)
             {
-                log.Error("GetIdWFApp", E);
                 MessageBox.Show(E.Message);
             }
         }
@@ -372,51 +318,42 @@ namespace WindowsFormsApp1
         private void BtnAdd2_Click(object sender, EventArgs e)
         {
             GebruikerWFToevoegen gebruikerwfToevoegen = new GebruikerWFToevoegen();
-            gebruikerwfToevoegen.Show();
+            gebruikerwfToevoegen.Parentform1 = Parentform1;
+            gebruikerwfToevoegen.ShowDialog();
             gebruikerwfToevoegen.Location = new Point(100, 100);
-            if (ParentForm2 != null)
-                ParentForm2.Refresh();
-            Close();
-            log.Info("BtnAdd2 clicked, open gebruikerWFToevoegen.cs");
+            if (ParentForm2 == null)
+            {
+                SelectUsers();
+            }
         }
         private void BtnEdit2_Click(object sender, EventArgs e)
         {
-            log.Info("BtnEdit2 clicked");
             GetIdWFApp();
-            log.Info("GetIdWFApp (F)");
             GebruikersWFBewerken gebruikerwfbewerken = new GebruikersWFBewerken();
-            gebruikerwfbewerken.Show();
-            log.Info("Open GebruikersWFBewerken.cs");
-            if (ParentForm2 != null)
-                ParentForm2.Refresh();
-            Close();
+            gebruikerwfbewerken.Parentform1 = Parentform1;
+            gebruikerwfbewerken.ShowDialog();
+            if (ParentForm2 == null)
+            {
+                SelectUsers();
+            }
         }
         private void BtnDelete2_Click(object sender, EventArgs e)
         {
-            log.Info("BtnDelete2 clicked");
             DeleteRecordWFApp();
-            log.Info("DeleteRecordWFApp (F)");
             SelectUsersWFApp();
-            log.Info("SelectUsersWFApp (F)");
         }
         private void BtnBan2_Click(object sender, EventArgs e)
         {
-            log.Info("BtnBan2 clicked");
             BanAccountMailWFApp();
-            log.Info("BanAccountMailWFApp (F)");
             SelectUsersWFApp();
-            log.Info("SelectUsersWFApp (F)");
         }
         private void BtnUnban2_Click(object sender, EventArgs e)
         {
-            log.Info("BtnUnban2 clicked");
             UnBanAccountMailWFApp();
-            log.Info("UnBanAccountMailWFApp (F)");
             SelectUsersWFApp();
-            log.Info("SelectUsersWFApp (F)");
         }
 
-        private void DataGridView1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        private void dataGridView1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
             if (e.Cell == null || e.StateChanged != DataGridViewElementStates.Selected)
                 return;
@@ -439,10 +376,9 @@ namespace WindowsFormsApp1
                 selectedCellRow = e.Cell.RowIndex;
                 selectedCellColumn = e.Cell.ColumnIndex;
             }
-            log.Info("DatagridViewFormApp cells can't be changed");
         }
 
-        private void DataGridView2_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        private void dataGridView2_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
             if (e.Cell == null || e.StateChanged != DataGridViewElementStates.Selected)
                 return;
@@ -465,7 +401,12 @@ namespace WindowsFormsApp1
                 selectedCellRow = e.Cell.RowIndex;
                 selectedCellColumn = e.Cell.ColumnIndex;
             }
-            log.Info("DatagridViewService cells can't be changed");
         }
+
+        private void Gebruiker_Shown(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }

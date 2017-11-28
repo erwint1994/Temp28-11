@@ -1,25 +1,88 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vertalen;
-using log4net;
+
 namespace WindowsFormsApp1
 {
     public partial class Help : Form
     {
+        public Temperatuur Parentform1 = null;
         public Help()
         {
             InitializeComponent();
         }
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
-(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public Temperatuur Parentform2 = null;
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Help_Load(object sender, EventArgs e)
         {
-            log.Info("Load Help.cs");
-            if (Parentform2.Engels == true)
+            if (Parentform1.Engels == true)
             {
-                Vertaal.DoVertaalForm(this, "EN");
+                foreach (Control control in Controls)
+                {
+                    Vertaal.VertaalControlsEN(control, "EN");
+                    foreach (Control controls in GetAllControls(control))
+                    {
+                        Vertaal.VertaalControlsEN(controls, "EN");
+                    }
+                }
             }
+
+            if (Parentform1.Duits == true)
+            {
+                foreach (Control control in Controls)
+                {
+                    Vertaal.VertaalControlsDE(control, "DE");
+                    foreach (Control controls in GetAllControls(control))
+                    {
+                        Vertaal.VertaalControlsDE(controls, "DE");
+                    }
+                }             
+            }
+
+            if (Parentform1.Nederlands == true)
+            {
+                foreach (Control control in Controls)
+                {
+                    Vertaal.VertaalControlsNL(control, "NL");
+                    foreach (Control controls in GetAllControls(control))
+                    {
+                        Vertaal.VertaalControlsNL(controls, "NL");
+                    }
+                }
+            }
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public IEnumerable<Control> GetAllControls(Control root)
+        {
+            foreach (Control control in root.Controls)
+            {
+                foreach (Control child in GetAllControls(control))
+                {
+                    yield return child;
+                }
+            }
+            yield return root;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

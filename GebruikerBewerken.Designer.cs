@@ -44,38 +44,38 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 35);
+            this.label1.Location = new System.Drawing.Point(2, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Voornaam* :";
+            this.label1.Text = "Voornaam";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 95);
+            this.label2.Location = new System.Drawing.Point(2, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Achternaam*  :";
+            this.label2.Text = "Achternaam";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(2, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Tussenvoegsel :";
+            this.label3.Text = "Tussenvoegsel";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 124);
+            this.label4.Location = new System.Drawing.Point(2, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Email*  : ";
+            this.label4.Text = "Email";
             // 
             // txbVoornaam
             // 

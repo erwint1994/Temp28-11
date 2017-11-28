@@ -10,21 +10,20 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using log4net;
+using Vertalen;
+
 namespace WindowsFormsApp1
 {
     public partial class GebruikerWFToevoegen : Form
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger
-    (System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         string MyConnectionString2 = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+        public Temperatuur Parentform1 = null;
         public GebruikerWFToevoegen()
         {
             InitializeComponent();
         }
         private void BtnVerzenden_Click_1(object sender, EventArgs e)
         {
-            log.Info("BtnVerzenden clicked");
             if (String.IsNullOrEmpty(txbVoornaam.Text))
             {
                 MessageBox.Show("Voornaam niet ingevuld.");
@@ -52,23 +51,37 @@ namespace WindowsFormsApp1
                     cmd.Parameters.AddWithValue("@achternaam", TxbAchternaam.Text);
                     cmd.Parameters.AddWithValue("@tussenvoegsel", TxbTussenvoegsel.Text);
                     cmd.ExecuteNonQuery();
-                    log.Info("INSERT INTO tbl_EmailAdressWFapp");
                 }
-                catch (Exception E)
+                catch (Exception)
                 {
-                    log.Error("INSERT INTO tbl_EmailAdressWFapp", E);
+                    throw;
                 }
                 connection.Close();
-                log.Info("Open Gebruiker.cs");
                 this.Close();
             }
         }
 
         private void GebruikerWFToevoegen_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Gebruiker form2 = new Gebruiker();
-            form2.Show();
-            log.Info("Open GebruikerBeheren.cs");
+
+        }
+
+        private void GebruikerWFToevoegen_Load(object sender, EventArgs e)
+        {
+            if (Parentform1.Engels == true)
+            {
+                Vertaal.VertaalControlsEN(this, "EN");
+            }
+
+            if (Parentform1.Duits == true)
+            {
+                Vertaal.VertaalControlsDE(this, "DE");
+            }
+
+            if (Parentform1.Nederlands == true)
+            {
+                Vertaal.VertaalControlsNL(this, "NL");
+            }
         }
     }
 }

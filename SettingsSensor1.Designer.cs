@@ -173,7 +173,6 @@
             this.TbMaximumtemperatuurFarhenheid.Name = "TbMaximumtemperatuurFarhenheid";
             this.TbMaximumtemperatuurFarhenheid.Size = new System.Drawing.Size(142, 20);
             this.TbMaximumtemperatuurFarhenheid.TabIndex = 158;
-           // this.TbMaximumtemperatuurFarhenheid.TextChanged += new System.EventHandler(this.TbMaximumtemperatuurFarhenheid_TextChanged);
             // 
             // TbMinimumtemperatuurFarhenheid
             // 
@@ -207,6 +206,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsSensor1";
             this.Text = "SettingsSensor1";
+            this.Load += new System.EventHandler(this.SettingsSensor1_Load);
             this.Shown += new System.EventHandler(this.SettingsSensor1_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();

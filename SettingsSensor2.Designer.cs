@@ -206,6 +206,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsSensor2";
             this.Text = "SettingsSensor2";
+            this.Load += new System.EventHandler(this.SettingsSensor2_Load);
             this.Shown += new System.EventHandler(this.SettingsSensor2_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
