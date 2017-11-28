@@ -1,0 +1,171 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Net;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
+using System.Windows.Forms.DataVisualization.Charting;
+
+namespace WindowsFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnTempratuur_Click(object sender, EventArgs e)
+        {
+            var ping = new System.Net.NetworkInformation.Ping();
+            var result = ping.Send("192.168.17.103");
+            if (result.Status != System.Net.NetworkInformation.IPStatus.Success)
+            {
+                MessageBox.Show("de internet is weg gevallen controlleer of de ethernet cabel er goed inzit");
+            }
+                string html = string.Empty;
+                string url = @"http://tcw122b-cm/status.xml?a=admin:admin&r1=1";
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.AutomaticDecompression = DecompressionMethods.GZip;
+
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                using (Stream stream = response.GetResponseStream())
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    html = reader.ReadToEnd();
+                    html = WebUtility.HtmlDecode(html);
+                }
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(html);
+
+            XmlNodeList xmlList = xmlDoc.DocumentElement.GetElementsByTagName("Temperature1");
+            XmlNodeList xmlList2 = xmlDoc.DocumentElement.GetElementsByTagName("Device");
+
+            for (int i = 0; i < xmlList2.Count; i++)
+            {
+                label2.Text = (xmlList2[i].InnerXml);
+            }
+
+            for (int i = 0; i < xmlList.Count; i++)
+            {
+                string path = ("C:\\Users\\nordin\\Desktop\\test.txt"); 
+
+                string appendText = xmlList[i].InnerXml + Environment.NewLine;
+                File.AppendAllText(path, appendText);
+
+   
+                lbltemp.Text = (xmlList[i].InnerXml);
+                /*
+
+               point rdn = this.chart1.Series["test1"].Points.AddXY(0, 10);
+               // Random rdn = new Random(temp);
+                for (int c = 0; c < 2; c++)
+                {
+                
+                int X = 1;
+                int y = 15;
+                // temperatuur
+                int x2 = 10;
+                int y2 = 30;
+                chart1.Series["test1"].Points.AddXY
+                  
+                ((X, y), rdn.Next(x2, y2));
+                
+
+                chart1.Series["test1"].ChartType = SeriesChartType.FastLine;
+                chart1.Series["test1"].Color = Color.Red;
+                */
+
+
+
+
+                string[] readText = File.ReadAllLines(path);
+                string x = readText[1];
+
+                label1.Text = x;
+
+                this.chart1.Series["test1"].Points.AddXY(5, x);
+
+                
+             }
+                
+
+             
+
+        }
+
+            
+        
+
+        private void lbltemp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btngmtemp_Click(object sender, EventArgs e)
+        {
+            var ping = new System.Net.NetworkInformation.Ping();
+            var result = ping.Send("192.168.17.103");
+            if (result.Status != System.Net.NetworkInformation.IPStatus.Success)
+            {
+                MessageBox.Show("de internet is weg gevallen controlleer of de ethernet cabel er goed inzit");
+            }
+            string html = string.Empty;
+            string url = @"http://tcw122b-cm/status.xml?a=admin:admin&r1=1";
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.AutomaticDecompression = DecompressionMethods.GZip;
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                html = reader.ReadToEnd();
+                html = WebUtility.HtmlDecode(html);
+            }
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(html);
+
+            XmlNodeList xmlList = xmlDoc.DocumentElement.GetElementsByTagName("Temperature1");
+
+            string path = ("C:\\Users\\nordin\\Desktop\\test.txt");
+            string[] readText = File.ReadAllLines(path);
+
+            for(int i=1;i < readText.Length; i++)
+            {
+                // string gmd = readText[i];
+                //   label1.Text = label1.Text + gmd;
+                //  int length = readText.Length;
+                //label1.Text = length.ToString()
+                //   ;
+                // 43
+               
+                label1.Text = readText[i];
+            }
+
+
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+    } 
+}
